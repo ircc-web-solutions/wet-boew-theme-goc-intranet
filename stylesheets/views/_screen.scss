@@ -1,0 +1,202 @@
+/*
+ *
+ * Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
+ * wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html
+ *
+ */
+/*
+  @title: All screen views
+ */
+
+%banner-text-color {
+	color: #fff;
+}
+
+%fip-height {
+	height: 1.4em;
+}
+
+%all-view-navigation-links {
+	@include navigation-links;
+}
+
+.wb-sl {
+	background-color: #000;
+	color: #fff;
+	font-weight: 700;
+
+	&:focus {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+#gcwu-sig {
+	@extend %fip-height;
+	margin: 10px 0;
+}
+
+#wmms {
+	@extend %fip-height;
+}
+
+#wb-sttl {
+	@extend %all-view-navigation-links;
+
+	a {
+		@extend %banner-text-color;
+	}
+}
+
+#wb-srch-sub {
+	float: right;
+	margin-left: 5px;
+}
+
+#wb-bnr-ss {
+	background: #618000;
+}
+
+#wb-ss {
+	@extend %all-view-navigation-links;
+	padding: .2em 0;
+
+	a {
+		@extend %banner-text-color;
+		font-size: 120%;
+	}
+}
+
+%submenu-colors {
+	background-color: #ccc;
+	color: #000;
+}
+
+%gcintranet-theme-wb-sm-wb-navcurr {
+	background: #0f315b;
+	color: #fff;
+}
+
+%all-views-navigation-links {
+	@include navigation-links;
+}
+
+#wb-sm {
+	margin-top: 15px;
+
+	.nvbar {
+		@include linear-background ($navigation-bar-gradient-start, $navigation-bar-gradient-end);
+		background-color: #146094;
+		border-bottom: 4px solid #ccc;
+		border-top: 1px solid #87aec9;
+
+		ul {
+			&.menu {
+				margin-bottom: 0;
+
+				> {
+					li {
+						border-right: 1px solid #999;
+						padding: 0;
+
+						> {
+							a {
+								&.wb-navcurr {
+									@extend %gcintranet-theme-wb-sm-wb-navcurr;
+								}
+
+								// :focus not needed since already covered by the &.active state
+								&:hover {
+									@extend %submenu-colors;
+								}
+							}
+						}
+
+						&.active {
+							border-color: #ccc;
+							border-right-color: #ccc;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.active {
+		a,
+		summary {
+			@extend %submenu-colors;
+		}
+	}
+
+	a,
+	summary {
+		color: #fff;
+		display: block;
+		font-weight: 700;
+		padding: .48em .79em;
+		text-decoration: none;
+	}
+
+	.sm {
+		@extend %all-views-navigation-links;
+		@extend %submenu-colors;
+		border-bottom: 4px solid #0f315b;
+		border-radius: 0 0 3px 3px;
+
+		a,
+		summary {
+			@extend %submenu-colors;
+			font-weight: 400;
+
+			&.wb-navcurr {
+				@extend %gcintranet-theme-wb-sm-wb-navcurr;
+			}
+		}
+
+		.slflnk {
+			a {
+				background: #bbb;
+
+				&.wb-navcurr {
+					@extend %gcintranet-theme-wb-sm-wb-navcurr;
+				}
+			}
+		}
+	}
+}
+
+#wb-dtmd {
+	float: right;
+}
+
+#wb-info {
+	li {
+		margin-bottom: .75em;
+	}
+}
+
+[dir=rtl] {
+	#wb-srch-sub {
+		float: left;
+		margin: {
+			left: 0;
+			right: 5px;
+		}
+	}
+
+	#wb-dtmd {
+		float: left;
+	}
+
+	#wb-sec {
+		.list-group {
+			.list-group {
+				.list-group-item {
+					padding-left: 15px;
+					padding-right: 1.8em;
+				}
+			}
+		}
+	}
+}
